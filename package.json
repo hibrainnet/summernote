@@ -20,6 +20,9 @@
     "dev": "eslint config && webpack serve --config=./config/webpack.config.dev.js --open --progress",
     "prebuild": "node ./config/build-fonts.js",
     "build": "webpack --node-env production --mode=production --config=./config/webpack.config.production.js --progress",
+    "build:dev": "HBN_ENV=development webpack --node-env production  --mode=production --config=./config/webpack.config.production.js --progress",
+    "build:release": "HBN_ENV=release webpack --node-env production  --mode=production --config=./config/webpack.config.production.js --progress",
+    "build:swap": "HBN_ENV=swap webpack --node-env production --mode=production --config=./config/webpack.config.production.js --progress",
     "lint": "eslint src/js plugin lang test config",
     "test": "karma start karma.conf.js --single-run",
     "test:grep": "karma run karma.conf.js -- --grep",
@@ -102,6 +105,5 @@
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.10.3",
     "zip-webpack-plugin": "^4.0.1"
-  },
-  "dependencies": {}
+  }
 }
